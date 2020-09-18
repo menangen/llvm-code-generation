@@ -1,4 +1,7 @@
 MAIN=quickjs.llvm
 OBJ=quickjs.llvm.o
 
-llc -filetype=obj $MAIN -o $OBJ
+
+PARAMS="-march=x86-64 -relocation-model=pic"
+
+llc ${PARAMS} -filetype=obj $MAIN -o $OBJ
